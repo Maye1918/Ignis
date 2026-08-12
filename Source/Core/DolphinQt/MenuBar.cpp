@@ -661,16 +661,9 @@ void MenuBar::AddHelpMenu()
 {
   QMenu* help_menu = addMenu(tr("&Help"));
 
-  QAction* website = help_menu->addAction(tr("&Website"));
-  connect(website, &QAction::triggered, this,
-          [] { QDesktopServices::openUrl(QUrl(QStringLiteral("https://projectplusgame.com/"))); });
-  QAction* documentation = help_menu->addAction(tr("Project+ Discord"));
-  connect(documentation, &QAction::triggered, this, [] {
-    QDesktopServices::openUrl(QUrl(QStringLiteral("https://discord.gg/vdssRDg")));
-  });
   QAction* github = help_menu->addAction(tr("&GitHub Repository"));
   connect(github, &QAction::triggered, this, [] {
-    QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/Project-Plus-Development-Team/Project-Plus-Dolphin")));
+    QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/Maye1918/Ignis/")));
   });
 
 #ifndef __APPLE__

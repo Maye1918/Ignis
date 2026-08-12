@@ -1,28 +1,31 @@
-name: Project+ Dolphin Builder
+name: Ignis Dolphin Builder
 
 on: [push, pull_request]
 
-jobs: 
+jobs:
   build_windows_x86_64:
     name: Windows Build
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v6
       with:
         repository: Maye1918/Ignis
         ref: master
         fetch-depth: 0
-    - name: Setup Submodules
-      run: git config --global --add safe.directory . && git submodule update --init --recursive
+        submodules: recursive
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.2
-      with:
-        vs-version: '16.6.2'
+      uses: microsoft/setup-msbuild@v3
     - name: Build
-      run: msbuild "Source\dolphin-emu.sln" /verbosity:minimal /property:Configuration=Release /property:Platform=x64
+      shell: pwsh
+      run: |
+        msbuild Source\dolphin-emu.sln `
+          /m `
+          /verbosity:normal `
+          /p:Configuration=Release `
+          /p:Platform=x64 `
     - name: Upload Build Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: Ignis-Dolphin-Windows${{ env.DOLPHINVER }}
         path: Binary/x64/
