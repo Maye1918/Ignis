@@ -10,7 +10,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
       with:
-        repository: Maye1918/Ignis/
+        repository: Maye1918/Ignis
         ref: master
         fetch-depth: 0
     - name: Setup Submodules
