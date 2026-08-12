@@ -39,7 +39,7 @@ AboutDialog::AboutDialog(QWidget* parent) : QDialog(parent)
 </p>
 
 <p>
-Built on Dolphin 2606. %CHECK_FOR_UPDATES%: <a href='https://projectplusgame.com'>projectplusgame.com.</a>
+Built on Dolphin 2606.
 </p>
 
 <p>
@@ -52,8 +52,7 @@ Built on Dolphin 2606. %CHECK_FOR_UPDATES%: <a href='https://projectplusgame.com
 
 <p>
 <a href='https://github.com/Project-Plus-Development-Team/Project-Plus-Dolphin/blob/master/COPYING'>License</a> |
-<a href='https://github.com/dolphin-emu/dolphin/graphs/contributors'>Dolphin Authors</a> |
-<a href='https://discord.gg/vdssRDg'>Setup Support</a>
+<a href='https://github.com/dolphin-emu/dolphin/graphs/contributors'>Dolphin Authors</a> 
 )")
           .replace(QStringLiteral("%VERSION_STRING%"),
                    QString::fromUtf8(Common::GetScmDescStr().c_str()))
